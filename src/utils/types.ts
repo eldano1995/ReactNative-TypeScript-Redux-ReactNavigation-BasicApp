@@ -1,0 +1,1 @@
+// Types that are use in all the app
