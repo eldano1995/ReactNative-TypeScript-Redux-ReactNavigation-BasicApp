@@ -14,53 +14,53 @@ jobs:
         node-version: [12.x]
     
     steps:
-#       - name: React Native Android Build APK
-#         uses: realabbas/Github-Actions-React-Native@v1.1.2
-      - name: Checkout last commit
-        uses: actions/checkout@v2.3.2
+      - name: React Native Android Build APK
+        uses: realabbas/Github-Actions-React-Native@v1.1.2
+#       - name: Checkout last commit
+#         uses: actions/checkout@v2.3.2
         
-      - name: Setup NodeJS version ${{ matrix.node_version }}
-        uses: actions/setup-node@v2.1.0
-        with:
-          node-version: ${{ matrix.node_version }}
+#       - name: Setup NodeJS version ${{ matrix.node_version }}
+#         uses: actions/setup-node@v2.1.0
+#         with:
+#           node-version: ${{ matrix.node_version }}
       
-      - name: Run npm install
-        run: sudo npm install
+#       - name: Run npm install
+#         run: sudo npm install
       
-      - name: Get linux permissions for running gradlew
-#         run: cd android && chmod +x ./gradlew
-        run: sudo chmod -R 777 ./android
+#       - name: Get linux permissions for running gradlew
+# #         run: cd android && chmod +x ./gradlew
+#         run: sudo chmod -R 777 ./android
         
-      - name: Build apk
-        run: cd android && sudo ./gradlew assembleRelease
+#       - name: Build apk
+#         run: cd android && sudo ./gradlew assembleRelease
       
-      - name: Get linux permissions for running gradlew for second time
-        run: sudo chmod -R 777 ./android
+#       - name: Get linux permissions for running gradlew for second time
+#         run: sudo chmod -R 777 ./android
         
-      - name: List files in dir
-        run: |          
-          cd android
-          echo "-------> android folder"
-          ls
+#       - name: List files in dir
+#         run: |          
+#           cd android
+#           echo "-------> android folder"
+#           ls
           
-          cd build
-          echo "-------> build"
-          ls
+#           cd build
+#           echo "-------> build"
+#           ls
           
-          cd outputs
-          echo "-------> outputs"
-          ls
+#           cd outputs
+#           echo "-------> outputs"
+#           ls
           
-          cd apk
-          echo "-------> apk"
-          ls
+#           cd apk
+#           echo "-------> apk"
+#           ls
           
       
-      - name: Upload app file
-        uses: actions/upload-artifact@v2.1.0
-        with:
-          name: android-release
-          path: android/build/outputs/apk/release/
+#       - name: Upload app file
+#         uses: actions/upload-artifact@v2.1.0
+#         with:
+#           name: android-release
+#           path: android/build/outputs/apk/release/
 
 
 
